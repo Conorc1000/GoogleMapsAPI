@@ -84,7 +84,7 @@ function placeMarker(location) {
 ```
 
 ## Our Tutorial
-We have created a quick example of how you can use the Google Maps API. Functionalities include:
+We have created a quick example of how you can use the Google Maps API. The functionalities include:
   - search
   - create marker from search value
   - zoom on the searched marker
