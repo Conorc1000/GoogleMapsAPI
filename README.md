@@ -41,51 +41,61 @@ We have chosen two of the most useful.
 
 ### Markers
 To add a new marker:
+
 1. Create a marker object with the position value. Call ```marker.setMap(map)```
-```javascript
-var marker=new google.maps.Marker({
-  position:new google.maps.LatLng(51.508742,-0.120850),
-  });
-marker.setMap(map);
-```
+
+ ```javascript
+ var marker=new google.maps.Marker({
+   position:new google.maps.LatLng(51.508742,-0.120850),
+   });
+ marker.setMap(map);
+ ```
+
 2. You can also add animations to your markers by adding it into your marker object e.g. ```animation: google.maps.Animation.BOUNCE```
 
 ### Info Windows
 1. create an infowindow object:
-```javascript
-var infowindow = new google.maps.InfoWindow({
-    content:"Hello World!"
-  });
-```
+
+ ```javascript
+ var infowindow = new google.maps.InfoWindow({
+     content:"Hello World!"
+   });
+ ```
+ 
 2. For this to appear when you click, add the following below:
-```javascript
-marker.addListener('click', function(){
-    infowindow.open(map, marker)
-  })
-```
+
+ ```javascript
+ marker.addListener('click', function(){
+     infowindow.open(map, marker)
+   })
+ ```
+ 
 3. Note the infowindow is specific to a previously defined marker and map.
 
 ### Allowing users to create markers
 1. Create a listener for the entire map which then runs a function.
-```javascript
-map.addListener('click', function(event){
-    placeMarker(event.latLng);
-})
-```
+
+ ```javascript
+ map.addListener('click', function(event){
+     placeMarker(event.latLng);
+ })
+ ```
+ 
 2. Create the placeMarker function.
-```javascript
-function placeMarker(location) {
-  var marker = new google.maps.Marker({
-    position: location,
-    map: map,
-  });
-  var infowindow = new google.maps.InfoWindow({
-    content: 'Latitude: ' + location.lat() +
-    '<br>Longitude: ' + location.lng()
-  });
-  infowindow.open(map,marker);
-}
-```
+
+ ```javascript
+ function placeMarker(location) {
+   var marker = new google.maps.Marker({
+     position: location,
+     map: map,
+   });
+   var infowindow = new google.maps.InfoWindow({
+     content: 'Latitude: ' + location.lat() +
+     '<br>Longitude: ' + location.lng()
+   });
+   infowindow.open(map,marker);
+ }
+ ```
 
 ## Our Tutorial
 We have created a quick example of how you can use the Google Maps API. The functionalities include:
