@@ -2,28 +2,32 @@
 Tutorial for using google maps API
 
 ## How to set up Google Maps API
-1. Load the google API using ```<script src="http://maps.googleapis.com/maps/api/js"></script>```
-2. If you plan for heavy traffic, get your API key from https://console.developers.google.com and add the script tag ```<script src="http://maps.googleapis.com/maps/api/js?key=YOUR_KEY"></script>```
-3. Set map properties by creating a function to initialize the map. Within this function you set up your map object with properties center, zoom and mapTypeId.
-4. Create a new map. You can create as may map objets as you wish.
-```javascript
-function initialize() {
-    var mapProp = {
-      center: new google.maps.LatLng(51.508742, -0.120850),
-      zoom: 7,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-  }
-```
-5. Add event Listener to load your map.
-```javascript
-google.maps.event.addDomListener(window, 'load', initialize)
-```
-6. Create basic HTML where your map will go.
-```HTML
-<div id="googleMap" style="width:500px;height:380px;"></div>
-```
+ 1. Load the google API using ```<script src="http://maps.googleapis.com/maps/api/js"></script>```
+ 2. If you plan for heavy traffic, get your API key from https://console.developers.google.com and add the script tag ```<script src="http://maps.googleapis.com/maps/api/js?key=YOUR_KEY"></script>```
+ 3. Set map properties by creating a function to initialize the map. Within this function you set up your map object with properties center, zoom and mapTypeId.
+ 4. Create a new map. You can create as may map objets as you wish. 
+ 
+    ```javascript
+    function initialize() {
+        var mapProp = {
+          center: new google.maps.LatLng(51.508742, -0.120850),
+          zoom: 7,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+      }
+    ```
+ 5. Add event Listener to load your map.
+
+    ```javascript
+    google.maps.event.addDomListener(window, 'load', initialize)
+    ```
+    
+ 6. Create basic HTML where your map will go.
+
+    ```HTML
+    <div id="googleMap" style="width:500px;height:380px;"></div>
+    ```
 
 
 ## Google Map Overlays
